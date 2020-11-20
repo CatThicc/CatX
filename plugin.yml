@@ -1,0 +1,233 @@
+name: CatX
+version: 1.1
+author: ThiccCat
+main: me.thicccat.catx.Main
+description: EssentialsX remake by a cat.
+
+commands:
+  back:
+    description: Teleports you to your last location.
+    permission: catx.back
+  cat:
+    aliases: [catx]
+    description: Displays information about the plugin.
+    permission: catx.main
+  help:
+    description: Displays the commands for CatX.
+    permission: catx.help
+  day:
+    description: Sets the time to day.
+    permission: catx.day
+  night:
+    description: Sets the time to night.
+    permission: catx.night
+  kill:
+    description: Kills the specified player.
+    permission: catx.kill
+  heal:
+    description: Heals the specified player.
+    permission: catx.heal
+  feed:
+    description: Fills the foodbar of the specified player.
+    permission: catx.feed
+  starve:
+    description: Starves the specified player.
+    permission: catx.starve
+  gmc:
+    description: Sets your gamemode to creative.
+    permission: catx.gmc
+  gms:
+    description: Sets your gamemode to survival.
+    permission: catx.gms
+  tpa:
+    description: Requests to teleport to another player.
+    permission: catx.tpa
+  tpahere:
+    aliases: [tpyes]
+    description: Requests to teleport someone to you.
+    permission: catx.tpahere
+  tpaccept:
+    aliases: [tpno]
+    description: Accepts an incoming tpa request.
+    permission: catx.tpa
+  tpdeny:
+    description: Denies an incoming tpa request.
+    permission: catx.tpa
+  weather:
+    description: Sets the weather in the current world.
+    permission: catx.weather
+  sun:
+    description: Sets the weather to sun in the current world.
+    permission: catx.weather
+  storm:
+    description: Sets the weather to storm in the current world.
+    permission: catx.weather
+  summon:
+    description: Summons the specified mob.
+    permission: catx.summon
+  home:
+    description: Teleports to a saved home.
+    permission: catx.home
+  sethome:
+    description: Sets a new home to tp to.
+    permission: catx.home
+  delhome:
+    aliases: [deletehome]
+    description: Deletes a saved home.
+    permission: catx.delhome
+  spawn:
+    description: Warps to the spawn.
+    permission: catx.spawn
+  setspawn:
+    description: Saves a new spawn warp.
+    permission: catx.setspawn
+  warp:
+    description: Teleports to a saved warp.
+    permission: catx.warp
+  setwarp:
+    description: Sets a new warp.
+    permission: catx.setwarp
+  delwarp:
+    aliases: [deletewarp]
+    description: Deletes a saved warp.
+    permission: catx.delwarp
+  exp:
+    aliases: [xp]
+    description: Adds exp to a player.
+    permission: catx.exp
+  msg:
+    aliases: [w,tell,whisper]
+    description: Whispers something to a player.
+    permission: catx.msg
+  reply:
+    aliases: [r]
+    description: Replies a message.
+    permission: catx.reply
+  nickname:
+    aliases: [nick]
+    description: Sets your nickname.
+    permission: catx.nickname
+  broadcast:
+    aliases: [bc]
+    description: Broadcasts a message to the server.
+    permission: catx.broadcast
+  kit:
+    aliases: [kits]
+    description: Equips a kit.
+    permission: catx.kit
+  setkit:
+    aliases: [createkit]
+    description: Creates a new kit.
+    permission: catx.setkit
+  delkit:
+    aliases: [deletekit]
+    description: Deletes a kit.
+    permission: catx.delkit
+  clear:
+    description: Clears a player inventory.
+    permission: catx.clear
+  invsee:
+    description: Allows you to see a player's inventory.
+    permission: catx.invsee
+  world:
+    description: Teleports you to the specified world.
+    permission: catx.world
+  fly:
+    description: Lets you fly around.
+    permission: catx.fly
+  enchant:
+    description: Enchants the item in hand.
+    permission: catx.enchant
+permissions:
+  catx.*:
+    default: op
+    description: Gives access to all commands.
+    children:
+      catx.back: true
+      catx.cat: true
+      catx.help: true
+      catx.day: true
+      catx.night: true
+      catx.heal: true
+      catx.kill: true
+      catx.feed: true
+      catx.starve: true
+      catx.heal.others: true
+      catx.kill.others: true
+      catx.feed.others: true
+      catx.starve.others: true
+      catx.gmc: true
+      catx.gms: true
+      catx.gmc.others: true
+      catx.gms.others: true
+      catx.tpa: true
+      catx.tpahere: true
+      catx.tpaccept: true
+      catx.tpdeny: true
+      catx.weather: true
+      catx.sun: true
+      catx.storm: true
+      catx.summon: true
+      catx.home: true
+      catx.sethome: true
+      catx.delhome: true
+      catx.spawn: true
+      catx.setspawn: true
+      catx.warp: true
+      catx.warp.list: true
+      catx.setwarp: true
+      catx.delwarp: true
+      catx.exp: true
+      catx.chatcolor: true
+      catx.msg: true
+      catx.reply: true
+      catx.nickname: true
+      catx.kit: true
+      catx.setkit: true
+      catx.delkit: true
+      catx.kit.list: true
+      catx.clear: true
+      catx.clear.others: true
+      catx.invsee: true
+      catx.world: true
+      catx.fly: true
+      catx.fly.others: true
+      catx.back.ondeath: true
+      catx.enchant: true
+    catx.kit.*:
+    default: op
+    description: Gives access to all kit commands.
+    children:
+      catx.warp: true
+      catx.warp.list: true
+      catx.setwarp: true
+      catx.delwarp: true
+    catx.warp.*:
+    default: op
+    description: Gives access to all warp commands.
+    children:
+      catx.warp: true
+      catx.setkit: true
+      catx.delkit: true
+      catx.kit.list: true
+    catx.home.*:
+    default: true
+    description: Gives access to all home commands.
+    children:
+      catx.home: true
+      catx.sethome: true
+      catx.delhome: true
+    catx.tpa.*:
+    default: op
+    description: Gives access to all tpa commands.
+    children:
+      catx.tpa: true
+      catx.tpahere: true
+      catx.tpaccept: true
+      catx.tpdeny: true
+    catx.gm.*:
+    default: op
+    description: Gives access to all gamemode commands.
+    children:
+      catx.gms: true
+      catx.gmc: true
